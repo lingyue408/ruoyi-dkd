@@ -1,19 +1,516 @@
-<p align="center" >
-<span style="background-color: #5373e0;display: inline-block"> 
-<img alt="logo" src="https://likede2-admin.itheima.net/img/logo.3673fab5.png">
-</span>
-</p>
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">帝可得</h1>
-<h4 align="center">基于RuoYi（SpringBoot+Vue前后端分离）的Java快速开发框架</h4>
+# 帝可得管理系统
 
+帝可得管理系统是基于若依（RuoYi）框架进行二次开发的管理系统，旨在为企业提供高效的人员管理和点位管理功能。该系统继承了若依框架的优秀特性，并在此基础上进行了定制化开发，以满足帝可得业务需求。
 
-## 背景介绍
+## 项目概述
 
-智能售货机项目是随着互联网及物联网技术的普及及发展，运用现有技术对传统售货机进行改造升级，从B端角度来提升传统售货机的的运营、运维效率，通过运营数据的采集和分析不断优化运营方案，降低运营、运维成本，缩短B端用户的盈利周期，针对不同的摆放点位及商业场景，匹配的不同机型及不同的商品供B端用户贴合自身特点来快速实现商业价值；针对C端用户的购物体验，将传统的纸币硬币购物流程替换成支付宝、微信、银联等线上扫码支付(或刷脸支付)等快捷支付方式。
+帝可得管理系统是一个基于Spring Boot + Vue.js的前后端分离的管理系统。目前已完成人员管理和点位管理模块的开发，后续将根据业务需求逐步扩展其他功能模块。
 
-业务模式分为，自营模式、加盟模式或点位主分成模式等。
+## 技术栈
 
-## 业务介绍
-随着售货机平台方运营售货机设备数量及点位数量越来越多，为了降低成本加快运营和运维效率将有限的资源迅速变现，平台方将系统做了切分，其中客户端包含三个：面向维修人员的运维客户端，主要用来跟踪和解决维修人员的日常工作和及时处理设备故障；运营客户端，主要用来提高日常运营效率，减少缺货设备，提高设备的盈利能力；C端用户客户端，面向C端用户的客户端，提高用户体验，缩短用户购物流程。
+- **后端技术栈**
+  - Spring Boot
+  - MyBatis
+  - MySQL
+  - Redis
+  - Shiro（权限管理）
+  - Swagger（API文档）
 
-为了更好的针对不同B端用户的使用习惯，平台端切分为两个端：平台管理端，主要为了管理设备、货道、商品、工单及运营、运维数据。合作商后台：针对有大量点位但是没有运营能力的用户提供数据接入和销售分成的管理。
+- **前端技术栈**
+  - Vue.js（vue3）
+  - Element UI
+  - Axios
+  - Vue Router
+
+## 功能模块
+
+### 1. 人员管理
+
+人员管理模块主要用于管理企业内部员工信息，包括以下功能：
+
+- **员工信息管理**：添加、编辑、删除、查询员工信息。
+- **角色管理**：为员工分配角色，控制不同角色的权限。
+- **部门管理**：管理公司部门结构，支持多级部门。
+- **权限管理**：基于角色的权限控制，确保不同角色的员工只能访问其权限范围内的功能。
+
+### 2. 点位管理
+
+点位管理模块用于管理企业的物理点位信息，包括以下功能：
+
+- **点位信息管理**：添加、编辑、删除、查询点位信息。
+- **点位状态监控**：实时监控点位的状态（如在线、离线、故障等）。
+- **点位分配**：将点位分配给特定员工或部门进行管理。
+- **点位统计**：提供点位的统计报表，支持按时间、区域等条件进行筛选。
+
+## 安装与部署
+
+### 后端部署
+
+1. **环境准备**
+   - JDK 1.8+
+   - MySQL 5.7+
+   - Redis 3.0+
+
+2. **数据库配置**
+   - 创建数据库并导入`sql`目录下的数据库脚本。
+   - 修改`application.yml`中的数据库连接配置。
+
+3. **启动项目**
+   - 使用Maven构建项目：`mvn clean install`
+   - 启动Spring Boot应用：`java -jar target/your-project-name.jar`
+
+### 前端部署
+
+1. **环境准备**
+   - Node.js 12+
+   - npm 6+
+
+2. **安装依赖**
+   - 进入前端项目目录：`cd ruoyi-ui`
+   - 安装依赖：`npm install`
+
+3. **启动项目**
+   - 开发环境启动：`npm run dev`
+   - 生产环境构建：`npm run build`
+
+## 使用说明
+
+1. **登录系统**
+   - 默认管理员账号：`admin`，密码：`admin123`
+
+2. **人员管理**
+   - 在“系统管理”菜单下，可以找到“用户管理”、“角色管理”、“部门管理”等子菜单，进行相应的操作。
+
+3. **点位管理**
+   - 在“业务管理”菜单下，可以找到“点位管理”子菜单，进行点位的添加、编辑、删除和查询操作。。
+
+## 贡献者
+
+- **开发团队**：帝可得技术部
+- **联系方式**：tech@dkg.com
+
+## 许可证
+
+本项目基于MIT许可证开源，详情请参见[LICENSE](LICENSE)文件。
+
+---
+## 目录结构
+
+D:\dkd-parent\dkd-vue
+├─.env.development
+├─.env.production
+├─.env.staging
+├─.gitignore
+├─index.html
+├─LICENSE
+├─package-lock.json
+├─package.json
+├─pnpm-lock.yaml
+├─README.md
+├─vite.config.js
+├─vite
+|  ├─plugins
+|  |    ├─auto-import.js
+|  |    ├─compression.js
+|  |    ├─index.js
+|  |    ├─setup-extend.js
+|  |    └svg-icon.js
+├─src
+|  ├─App.vue
+|  ├─main.js
+|  ├─permission.js
+|  ├─settings.js
+|  ├─views
+|  |   ├─login.vue
+|  |   ├─register.vue
+|  |   ├─tool
+|  |   |  ├─swagger
+|  |   |  |    └index.vue
+|  |   |  ├─gen
+|  |   |  |  ├─basicInfoForm.vue
+|  |   |  |  ├─editTable.vue
+|  |   |  |  ├─genInfoForm.vue
+|  |   |  |  ├─importTable.vue
+|  |   |  |  └index.vue
+|  |   |  ├─build
+|  |   |  |   ├─CodeTypeDialog.vue
+|  |   |  |   ├─DraggableItem copy.vue
+|  |   |  |   ├─DraggableItem.vue
+|  |   |  |   ├─IconsDialog.vue
+|  |   |  |   ├─index.vue
+|  |   |  |   ├─RightPanel.vue
+|  |   |  |   └TreeNodeDialog.vue
+|  |   ├─system
+|  |   |   ├─user
+|  |   |   |  ├─authRole.vue
+|  |   |   |  ├─index.vue
+|  |   |   |  ├─profile
+|  |   |   |  |    ├─index.vue
+|  |   |   |  |    ├─resetPwd.vue
+|  |   |   |  |    ├─userAvatar.vue
+|  |   |   |  |    └userInfo.vue
+|  |   |   ├─role
+|  |   |   |  ├─authUser.vue
+|  |   |   |  ├─index.vue
+|  |   |   |  └selectUser.vue
+|  |   |   ├─post
+|  |   |   |  └index.vue
+|  |   |   ├─notice
+|  |   |   |   └index.vue
+|  |   |   ├─menu
+|  |   |   |  └index.vue
+|  |   |   ├─dict
+|  |   |   |  ├─data.vue
+|  |   |   |  └index.vue
+|  |   |   ├─dept
+|  |   |   |  └index.vue
+|  |   |   ├─config
+|  |   |   |   └index.vue
+|  |   ├─redirect
+|  |   |    └index.vue
+|  |   ├─monitor
+|  |   |    ├─server
+|  |   |    |   └index.vue
+|  |   |    ├─operlog
+|  |   |    |    └index.vue
+|  |   |    ├─online
+|  |   |    |   └index.vue
+|  |   |    ├─logininfor
+|  |   |    |     └index.vue
+|  |   |    ├─job
+|  |   |    |  ├─index.vue
+|  |   |    |  └log.vue
+|  |   |    ├─druid
+|  |   |    |   └index.vue
+|  |   |    ├─cache
+|  |   |    |   ├─index.vue
+|  |   |    |   └list.vue
+|  |   ├─manage
+|  |   |   ├─region
+|  |   |   |   └index.vue
+|  |   |   ├─partner
+|  |   |   |    └index.vue
+|  |   |   ├─node
+|  |   |   |  └index.vue
+|  |   |   ├─emp
+|  |   |   |  └index.vue
+|  |   ├─home
+|  |   |  ├─index.vue
+|  |   |  ├─components
+|  |   |  |     ├─abnormal-equipment-table.vue
+|  |   |  |     ├─home-sku-sale-stats.vue
+|  |   |  |     ├─home-user-task-stats.vue
+|  |   |  |     ├─partner-node-collect-chart.vue
+|  |   |  |     ├─partner-node-collect-pie-chart.vue
+|  |   |  |     ├─sku-sale-collect-bar-chart.vue
+|  |   |  |     ├─sku-sale-collect-chart.vue
+|  |   |  |     ├─sku-sale-collect-line-chart.vue
+|  |   |  |     └sku-sale-rank-chart.vue
+|  |   ├─error
+|  |   |   ├─401.vue
+|  |   |   └404.vue
+|  ├─utils
+|  |   ├─auth.js
+|  |   ├─dict.js
+|  |   ├─dynamicTitle.js
+|  |   ├─errorCode.js
+|  |   ├─index.js
+|  |   ├─jsencrypt.js
+|  |   ├─permission.js
+|  |   ├─request.js
+|  |   ├─ruoyi.js
+|  |   ├─scroll-to.js
+|  |   ├─theme.js
+|  |   ├─validate.js
+|  |   ├─generator
+|  |   |     ├─config.js
+|  |   |     ├─css.js
+|  |   |     ├─drawingDefalut.js
+|  |   |     ├─html.js
+|  |   |     ├─icon.json
+|  |   |     ├─js.js
+|  |   |     └render.js
+|  ├─store
+|  |   ├─index.js
+|  |   ├─modules
+|  |   |    ├─app.js
+|  |   |    ├─dict.js
+|  |   |    ├─permission.js
+|  |   |    ├─settings.js
+|  |   |    ├─tagsView.js
+|  |   |    └user.js
+|  ├─router
+|  |   └index.js
+|  ├─plugins
+|  |    ├─auth.js
+|  |    ├─cache.js
+|  |    ├─download.js
+|  |    ├─index.js
+|  |    ├─modal.js
+|  |    └tab.js
+|  ├─layout
+|  |   ├─index.vue
+|  |   ├─components
+|  |   |     ├─AppMain.vue
+|  |   |     ├─index.js
+|  |   |     ├─Navbar.vue
+|  |   |     ├─TagsView
+|  |   |     |    ├─index.vue
+|  |   |     |    └ScrollPane.vue
+|  |   |     ├─Sidebar
+|  |   |     |    ├─index.vue
+|  |   |     |    ├─Link.vue
+|  |   |     |    ├─Logo.vue
+|  |   |     |    └SidebarItem.vue
+|  |   |     ├─Settings
+|  |   |     |    └index.vue
+|  |   |     ├─InnerLink
+|  |   |     |     └index.vue
+|  |   |     ├─IframeToggle
+|  |   |     |      └index.vue
+|  ├─directive
+|  |     ├─index.js
+|  |     ├─permission
+|  |     |     ├─hasPermi.js
+|  |     |     └hasRole.js
+|  |     ├─common
+|  |     |   └copyText.js
+|  ├─components
+|  |     ├─week-month-year
+|  |     |        └index.vue
+|  |     ├─TreeSelect
+|  |     |     └index.vue
+|  |     ├─TopNav
+|  |     |   └index.vue
+|  |     ├─SvgIcon
+|  |     |    ├─index.vue
+|  |     |    └svgicon.js
+|  |     ├─SizeSelect
+|  |     |     └index.vue
+|  |     ├─Screenfull
+|  |     |     └index.vue
+|  |     ├─RuoYi
+|  |     |   ├─Git
+|  |     |   |  └index.vue
+|  |     |   ├─Doc
+|  |     |   |  └index.vue
+|  |     ├─RightToolbar
+|  |     |      └index.vue
+|  |     ├─ParentView
+|  |     |     └index.vue
+|  |     ├─Pagination
+|  |     |     └index.vue
+|  |     ├─ImageUpload
+|  |     |      └index.vue
+|  |     ├─ImagePreview
+|  |     |      └index.vue
+|  |     ├─iFrame
+|  |     |   └index.vue
+|  |     ├─IconSelect
+|  |     |     ├─index.vue
+|  |     |     └requireIcons.js
+|  |     ├─HeaderSearch
+|  |     |      └index.vue
+|  |     ├─Hamburger
+|  |     |     └index.vue
+|  |     ├─FileUpload
+|  |     |     └index.vue
+|  |     ├─empty-data-chart
+|  |     |        └index.vue
+|  |     ├─Editor
+|  |     |   └index.vue
+|  |     ├─DictTag
+|  |     |    └index.vue
+|  |     ├─Crontab
+|  |     |    ├─day.vue
+|  |     |    ├─hour.vue
+|  |     |    ├─index.vue
+|  |     |    ├─min.vue
+|  |     |    ├─month.vue
+|  |     |    ├─result.vue
+|  |     |    ├─second.vue
+|  |     |    ├─week.vue
+|  |     |    └year.vue
+|  |     ├─Breadcrumb
+|  |     |     └index.vue
+|  ├─assets
+|  |   ├─vm
+|  |   | ├─default_sku.png
+|  |   | └selected.png
+|  |   ├─user-task-stats
+|  |   |        ├─operation.png
+|  |   |        ├─top.png
+|  |   |        ├─top1.png
+|  |   |        ├─top2.png
+|  |   |        ├─top3.png
+|  |   |        └truck.png
+|  |   ├─task
+|  |   |  ├─icon_1.png
+|  |   |  ├─icon_2.png
+|  |   |  ├─icon_3.png
+|  |   |  ├─icon_4.png
+|  |   |  ├─pic_1.png
+|  |   |  ├─pic_2.png
+|  |   |  ├─pic_3.png
+|  |   |  └pic_4.png
+|  |   ├─styles
+|  |   |   ├─btn.scss
+|  |   |   ├─element-ui.scss
+|  |   |   ├─index.scss
+|  |   |   ├─mixin.scss
+|  |   |   ├─ruoyi.scss
+|  |   |   ├─sidebar.scss
+|  |   |   ├─transition.scss
+|  |   |   └variables.module.scss
+|  |   ├─logo
+|  |   |  ├─logo.png
+|  |   |  └logo.png.bak
+|  |   ├─images
+|  |   |   ├─circle.png
+|  |   |   ├─dark.svg
+|  |   |   ├─empty.png
+|  |   |   ├─light.svg
+|  |   |   ├─login-background.jpg
+|  |   |   ├─login-background1.png
+|  |   |   ├─pay.png
+|  |   |   ├─profile.jpg
+|  |   |   ├─sale.png
+|  |   |   └task.png
+|  |   ├─icons
+|  |   |   ├─svg
+|  |   |   |  ├─404.svg
+|  |   |   |  ├─bug.svg
+|  |   |   |  ├─build.svg
+|  |   |   |  ├─button.svg
+|  |   |   |  ├─cascader.svg
+|  |   |   |  ├─chart.svg
+|  |   |   |  ├─checkbox.svg
+|  |   |   |  ├─clipboard.svg
+|  |   |   |  ├─code.svg
+|  |   |   |  ├─color.svg
+|  |   |   |  ├─component.svg
+|  |   |   |  ├─dashboard.svg
+|  |   |   |  ├─date-range.svg
+|  |   |   |  ├─date.svg
+|  |   |   |  ├─dict.svg
+|  |   |   |  ├─documentation.svg
+|  |   |   |  ├─download.svg
+|  |   |   |  ├─drag.svg
+|  |   |   |  ├─druid.svg
+|  |   |   |  ├─edit.svg
+|  |   |   |  ├─education.svg
+|  |   |   |  ├─email.svg
+|  |   |   |  ├─example.svg
+|  |   |   |  ├─excel.svg
+|  |   |   |  ├─exit-fullscreen.svg
+|  |   |   |  ├─eye-open.svg
+|  |   |   |  ├─eye.svg
+|  |   |   |  ├─form.svg
+|  |   |   |  ├─fullscreen.svg
+|  |   |   |  ├─github.svg
+|  |   |   |  ├─guide.svg
+|  |   |   |  ├─icon.svg
+|  |   |   |  ├─input.svg
+|  |   |   |  ├─international.svg
+|  |   |   |  ├─job.svg
+|  |   |   |  ├─language.svg
+|  |   |   |  ├─link.svg
+|  |   |   |  ├─list.svg
+|  |   |   |  ├─lock.svg
+|  |   |   |  ├─log.svg
+|  |   |   |  ├─logininfor.svg
+|  |   |   |  ├─message.svg
+|  |   |   |  ├─money.svg
+|  |   |   |  ├─monitor.svg
+|  |   |   |  ├─nested.svg
+|  |   |   |  ├─number.svg
+|  |   |   |  ├─online.svg
+|  |   |   |  ├─password.svg
+|  |   |   |  ├─pdf.svg
+|  |   |   |  ├─people.svg
+|  |   |   |  ├─peoples.svg
+|  |   |   |  ├─phone.svg
+|  |   |   |  ├─post.svg
+|  |   |   |  ├─qq.svg
+|  |   |   |  ├─question.svg
+|  |   |   |  ├─radio.svg
+|  |   |   |  ├─rate.svg
+|  |   |   |  ├─redis-list.svg
+|  |   |   |  ├─redis.svg
+|  |   |   |  ├─row.svg
+|  |   |   |  ├─search.svg
+|  |   |   |  ├─select.svg
+|  |   |   |  ├─server.svg
+|  |   |   |  ├─shopping.svg
+|  |   |   |  ├─size.svg
+|  |   |   |  ├─skill.svg
+|  |   |   |  ├─slider.svg
+|  |   |   |  ├─star.svg
+|  |   |   |  ├─swagger.svg
+|  |   |   |  ├─switch.svg
+|  |   |   |  ├─system.svg
+|  |   |   |  ├─tab.svg
+|  |   |   |  ├─table.svg
+|  |   |   |  ├─textarea.svg
+|  |   |   |  ├─theme.svg
+|  |   |   |  ├─time-range.svg
+|  |   |   |  ├─time.svg
+|  |   |   |  ├─tool.svg
+|  |   |   |  ├─tree-table.svg
+|  |   |   |  ├─tree.svg
+|  |   |   |  ├─upload.svg
+|  |   |   |  ├─user.svg
+|  |   |   |  ├─validCode.svg
+|  |   |   |  ├─wechat.svg
+|  |   |   |  ├─zip.svg
+|  |   |   |  ├─商品管理.svg
+|  |   |   |  ├─工单管理.svg
+|  |   |   |  ├─点位管理.svg
+|  |   |   |  ├─策略管理.svg
+|  |   |   |  ├─订单管理.svg
+|  |   |   |  └设备管理.svg
+|  |   ├─404_images
+|  |   |     ├─404.png
+|  |   |     └404_cloud.png
+|  |   ├─401_images
+|  |   |     └401.gif
+|  ├─api
+|  |  ├─login.js
+|  |  ├─menu.js
+|  |  ├─page.js
+|  |  ├─tool
+|  |  |  └gen.js
+|  |  ├─system
+|  |  |   ├─config.js
+|  |  |   ├─dept.js
+|  |  |   ├─menu.js
+|  |  |   ├─notice.js
+|  |  |   ├─post.js
+|  |  |   ├─role.js
+|  |  |   ├─user.js
+|  |  |   ├─dict
+|  |  |   |  ├─data.js
+|  |  |   |  └type.js
+|  |  ├─monitor
+|  |  |    ├─cache.js
+|  |  |    ├─job.js
+|  |  |    ├─jobLog.js
+|  |  |    ├─logininfor.js
+|  |  |    ├─online.js
+|  |  |    ├─operlog.js
+|  |  |    └server.js
+|  |  ├─manage
+|  |  |   ├─emp.js
+|  |  |   ├─node.js
+|  |  |   ├─partner.js
+|  |  |   ├─region.js
+|  |  |   └role.js
+├─public
+|   ├─favicon.ico
+|   └favicon.ico.bak
+├─html
+|  └ie.html
+├─bin
+|  ├─build.bat
+|  ├─package.bat
+|  └run-web.bat
