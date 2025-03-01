@@ -97,10 +97,6 @@
 ## 目录结构
 
 D:\dkd-parent\dkd-vue
-├─.env.development
-├─.env.production
-├─.env.staging
-├─.gitignore
 ├─index.html
 ├─LICENSE
 ├─package-lock.json
@@ -110,11 +106,6 @@ D:\dkd-parent\dkd-vue
 ├─vite.config.js
 ├─vite
 |  ├─plugins
-|  |    ├─auto-import.js
-|  |    ├─compression.js
-|  |    ├─index.js
-|  |    ├─setup-extend.js
-|  |    └svg-icon.js
 ├─src
 |  ├─App.vue
 |  ├─main.js
@@ -197,18 +188,6 @@ D:\dkd-parent\dkd-vue
 |  |   ├─home
 |  |   |  ├─index.vue
 |  |   |  ├─components
-|  |   |  |     ├─abnormal-equipment-table.vue
-|  |   |  |     ├─home-sku-sale-stats.vue
-|  |   |  |     ├─home-user-task-stats.vue
-|  |   |  |     ├─partner-node-collect-chart.vue
-|  |   |  |     ├─partner-node-collect-pie-chart.vue
-|  |   |  |     ├─sku-sale-collect-bar-chart.vue
-|  |   |  |     ├─sku-sale-collect-chart.vue
-|  |   |  |     ├─sku-sale-collect-line-chart.vue
-|  |   |  |     └sku-sale-rank-chart.vue
-|  |   ├─error
-|  |   |   ├─401.vue
-|  |   |   └404.vue
 |  ├─utils
 |  |   ├─auth.js
 |  |   ├─dict.js
@@ -338,21 +317,7 @@ D:\dkd-parent\dkd-vue
 |  |   | ├─default_sku.png
 |  |   | └selected.png
 |  |   ├─user-task-stats
-|  |   |        ├─operation.png
-|  |   |        ├─top.png
-|  |   |        ├─top1.png
-|  |   |        ├─top2.png
-|  |   |        ├─top3.png
-|  |   |        └truck.png
 |  |   ├─task
-|  |   |  ├─icon_1.png
-|  |   |  ├─icon_2.png
-|  |   |  ├─icon_3.png
-|  |   |  ├─icon_4.png
-|  |   |  ├─pic_1.png
-|  |   |  ├─pic_2.png
-|  |   |  ├─pic_3.png
-|  |   |  └pic_4.png
 |  |   ├─styles
 |  |   |   ├─btn.scss
 |  |   |   ├─element-ui.scss
@@ -378,102 +343,12 @@ D:\dkd-parent\dkd-vue
 |  |   |   └task.png
 |  |   ├─icons
 |  |   |   ├─svg
-|  |   |   |  ├─404.svg
-|  |   |   |  ├─bug.svg
-|  |   |   |  ├─build.svg
-|  |   |   |  ├─button.svg
-|  |   |   |  ├─cascader.svg
-|  |   |   |  ├─chart.svg
-|  |   |   |  ├─checkbox.svg
-|  |   |   |  ├─clipboard.svg
-|  |   |   |  ├─code.svg
-|  |   |   |  ├─color.svg
-|  |   |   |  ├─component.svg
-|  |   |   |  ├─dashboard.svg
-|  |   |   |  ├─date-range.svg
-|  |   |   |  ├─date.svg
-|  |   |   |  ├─dict.svg
-|  |   |   |  ├─documentation.svg
-|  |   |   |  ├─download.svg
-|  |   |   |  ├─drag.svg
-|  |   |   |  ├─druid.svg
-|  |   |   |  ├─edit.svg
-|  |   |   |  ├─education.svg
-|  |   |   |  ├─email.svg
-|  |   |   |  ├─example.svg
-|  |   |   |  ├─excel.svg
-|  |   |   |  ├─exit-fullscreen.svg
-|  |   |   |  ├─eye-open.svg
-|  |   |   |  ├─eye.svg
-|  |   |   |  ├─form.svg
-|  |   |   |  ├─fullscreen.svg
-|  |   |   |  ├─github.svg
-|  |   |   |  ├─guide.svg
-|  |   |   |  ├─icon.svg
-|  |   |   |  ├─input.svg
-|  |   |   |  ├─international.svg
-|  |   |   |  ├─job.svg
-|  |   |   |  ├─language.svg
-|  |   |   |  ├─link.svg
-|  |   |   |  ├─list.svg
-|  |   |   |  ├─lock.svg
-|  |   |   |  ├─log.svg
-|  |   |   |  ├─logininfor.svg
-|  |   |   |  ├─message.svg
-|  |   |   |  ├─money.svg
-|  |   |   |  ├─monitor.svg
-|  |   |   |  ├─nested.svg
-|  |   |   |  ├─number.svg
-|  |   |   |  ├─online.svg
-|  |   |   |  ├─password.svg
-|  |   |   |  ├─pdf.svg
-|  |   |   |  ├─people.svg
-|  |   |   |  ├─peoples.svg
-|  |   |   |  ├─phone.svg
-|  |   |   |  ├─post.svg
-|  |   |   |  ├─qq.svg
-|  |   |   |  ├─question.svg
-|  |   |   |  ├─radio.svg
-|  |   |   |  ├─rate.svg
-|  |   |   |  ├─redis-list.svg
-|  |   |   |  ├─redis.svg
-|  |   |   |  ├─row.svg
-|  |   |   |  ├─search.svg
-|  |   |   |  ├─select.svg
-|  |   |   |  ├─server.svg
-|  |   |   |  ├─shopping.svg
-|  |   |   |  ├─size.svg
-|  |   |   |  ├─skill.svg
-|  |   |   |  ├─slider.svg
-|  |   |   |  ├─star.svg
-|  |   |   |  ├─swagger.svg
-|  |   |   |  ├─switch.svg
-|  |   |   |  ├─system.svg
-|  |   |   |  ├─tab.svg
-|  |   |   |  ├─table.svg
-|  |   |   |  ├─textarea.svg
-|  |   |   |  ├─theme.svg
-|  |   |   |  ├─time-range.svg
-|  |   |   |  ├─time.svg
-|  |   |   |  ├─tool.svg
-|  |   |   |  ├─tree-table.svg
-|  |   |   |  ├─tree.svg
-|  |   |   |  ├─upload.svg
-|  |   |   |  ├─user.svg
-|  |   |   |  ├─validCode.svg
-|  |   |   |  ├─wechat.svg
-|  |   |   |  ├─zip.svg
 |  |   |   |  ├─商品管理.svg
 |  |   |   |  ├─工单管理.svg
 |  |   |   |  ├─点位管理.svg
 |  |   |   |  ├─策略管理.svg
 |  |   |   |  ├─订单管理.svg
 |  |   |   |  └设备管理.svg
-|  |   ├─404_images
-|  |   |     ├─404.png
-|  |   |     └404_cloud.png
-|  |   ├─401_images
-|  |   |     └401.gif
 |  ├─api
 |  |  ├─login.js
 |  |  ├─menu.js
@@ -505,12 +380,3 @@ D:\dkd-parent\dkd-vue
 |  |  |   ├─partner.js
 |  |  |   ├─region.js
 |  |  |   └role.js
-├─public
-|   ├─favicon.ico
-|   └favicon.ico.bak
-├─html
-|  └ie.html
-├─bin
-|  ├─build.bat
-|  ├─package.bat
-|  └run-web.bat
