@@ -93,6 +93,12 @@
 
 本项目基于MIT许可证开源，详情请参见[LICENSE](LICENSE)文件。
 
+##一些问题
+1.VScode如果提交改动一直很慢，解决方案
+https://blog.csdn.net/lsfhack/article/details/131113277
+2.GitHub提交文件出现子模块箭头，解决方案
+https://blog.csdn.net/weixin_52271747/article/details/125137873
+
 ---
 ## 目录结构
 
